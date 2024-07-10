@@ -7,6 +7,7 @@ import Queue.management.system.example.management.system.Exceptions.PatientExcep
 import Queue.management.system.example.management.system.Repo.AppointmentRepo;
 import Queue.management.system.example.management.system.Repo.PatientRepo;
 import Queue.management.system.example.management.system.beans.Appointment;
+import Queue.management.system.example.management.system.beans.AppointmentStatus;
 import Queue.management.system.example.management.system.beans.DoctorType;
 import Queue.management.system.example.management.system.beans.Patient;
 import lombok.RequiredArgsConstructor;
@@ -66,20 +67,20 @@ public class PatientService {
             if (appointment.getAppointmentDate().before(Date.valueOf(LocalDate.now()))) {
                 throw new PatientSystemExceptions(PatientErrMsg.DATE_ERROR);
             }
-            if (appointment.getAppointmentTime().before(Time.valueOf(LocalTime.now()))) {
-                throw new PatientSystemExceptions(PatientErrMsg.DATE_ERROR);
-            }
+
 
             // Adding the appointment to the patient's appointments
             patient.getAppointments().add(appointment);
             // Saving
             patientRepo.saveAndFlush(patient);
             // Getting all appointments
-            List<Appointment> appointments = adminService.getAllAppointments();
-            // Removing this specific appointment
-            appointments.remove(appointment);
-            // Saving
+            appointment.setStatus(AppointmentStatus.NOT_AVAILABLE);
             appointmentRepo.saveAndFlush(appointment);
+//            List<Appointment> appointments = adminService.getAllAppointments();
+//            // Removing this specific appointment
+//            appointments.remove(appointment);
+//            // Saving
+//            appointmentRepo.saveAndFlush(appointment);
         }
 
         public List<Appointment> getAllPatientAppointments (int id) throws PatientSystemExceptions {

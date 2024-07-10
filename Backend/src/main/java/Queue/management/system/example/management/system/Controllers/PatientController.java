@@ -42,7 +42,7 @@ public class PatientController {
         return patientService.getAllPatientAppointments(id);
     }
 
-    @GetMapping("/all_appointments_by_doc_type/{id}/{DocType}")
+    @GetMapping("/all_appointments_by_doc_type/{id}/{doctorType}")
     @ResponseStatus(HttpStatus.OK)
     public List<Appointment> getAllAppointmentsByDoctorType(@PathVariable int id, @PathVariable DoctorType doctorType) throws PatientSystemExceptions {
         return patientService.getPatientAppointmentsByDoctorType(id, doctorType);

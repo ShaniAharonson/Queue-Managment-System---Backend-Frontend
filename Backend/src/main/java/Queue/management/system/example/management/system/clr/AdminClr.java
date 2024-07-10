@@ -13,7 +13,9 @@ import org.springframework.stereotype.Component;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 //@Component
@@ -63,8 +65,7 @@ public class AdminClr implements CommandLineRunner {
 
             adminService.createAppointment(Appointment.builder()
                     .id(0)
-                    .appointmentDate(Date.valueOf(LocalDate.of(2024, 8, 11)))
-                    .appointmentTime(Time.valueOf(LocalTime.of(10, 20)))
+                    .appointmentDate(Timestamp.valueOf(LocalDateTime.of(2024,9,12,10,30)))
                     .status(AppointmentStatus.CONFIRMED)
                     .doctorType(DoctorType.DERMATOLOGIST)
                     .build());

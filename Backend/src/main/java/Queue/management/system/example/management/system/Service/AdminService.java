@@ -56,6 +56,10 @@ public class AdminService {
                 new AdminSystemExceptions(AdminErrMsg.USER_NOT_FOUND));
 
     }
+    public Appointment getSingleAppointment(int appointmentId) throws AdminSystemExceptions{
+        return appointmentRepo.findById(appointmentId).orElseThrow(()->
+                new AdminSystemExceptions(AdminErrMsg.APPOINTMENT_NOT_FOUND));
+    }
 
     public List<Patient> getAllPatients(){
         return userRepo.findAll();

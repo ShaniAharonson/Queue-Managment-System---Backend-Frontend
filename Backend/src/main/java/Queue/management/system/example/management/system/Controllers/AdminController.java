@@ -44,6 +44,12 @@ public class AdminController {
         return adminService.getSinglePatient(id);
     }
 
+    @GetMapping("/single_appointment/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Appointment getSingleAppointment(@PathVariable int id) throws AdminSystemExceptions{
+        return adminService.getSingleAppointment(id);
+    }
+
     @GetMapping("/all_patients")
     @ResponseStatus(HttpStatus.OK)
     public List<Patient> getAllPatients() {
