@@ -14,6 +14,8 @@ public class UserDetails {
     private int userId;
     private String email;
     private String password;
+    private String userName;
+    private UserType userType;
 
 
 }

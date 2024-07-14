@@ -11,6 +11,7 @@ import Queue.management.system.example.management.system.beans.Patient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -27,28 +28,31 @@ public class AdminService {
         return true;
     }
 
-    public void addPatient(Patient patient) throws AdminSystemExceptions {
+    public boolean addPatient(Patient patient) throws AdminSystemExceptions {
         if (userRepo.existsById(patient.getId())) {
             throw new AdminSystemExceptions(AdminErrMsg.PATIENT_ALREADY_EXISTS);
         }
         userRepo.save(patient);
+        return true;
     }
 
-    public void deletePatient(int id) throws AdminSystemExceptions {
+    public boolean deletePatient(int id) throws AdminSystemExceptions {
         if (!userRepo.existsById(id)) {
             throw new AdminSystemExceptions(AdminErrMsg.USER_NOT_FOUND);
         }
         Patient patient = getSinglePatient(id);
         patient.setAppointments(null);
         userRepo.deleteById(id);
+        return true;
     }
 
-    public void deleteAppointment(int id) throws AdminSystemExceptions {
+    public boolean deleteAppointment(int id) throws AdminSystemExceptions {
         if (!appointmentRepo.existsById(id)) {
             throw new AdminSystemExceptions(AdminErrMsg.ID_NOT_FOUND);
         }
         appointmentRepo.deleteById(id);
         // todo: fix- not working!!!!!!!
+        return true;
     }
 
     public Patient getSinglePatient(int patientId) throws AdminSystemExceptions {
@@ -69,18 +73,20 @@ public class AdminService {
         return appointmentRepo.findAll();
     }
 
-    public void updateAppointment(Appointment appointment) throws AdminSystemExceptions {
+    public boolean updateAppointment(Appointment appointment) throws AdminSystemExceptions {
         if (!appointmentRepo.existsById(appointment.getId())) {
             throw new AdminSystemExceptions(AdminErrMsg.APPOINTMENT_NOT_FOUND);
         }
         appointmentRepo.saveAndFlush(appointment);
+        return true;
     }
 
-    public void createAppointment(Appointment appointment) throws AdminSystemExceptions {
+    public boolean createAppointment(Appointment appointment) throws AdminSystemExceptions {
         if (appointmentRepo.existsById(appointment.getId())) {
             throw new AdminSystemExceptions(AdminErrMsg.APPOINTMENT_ALREADY_EXISTS);
         }
         appointmentRepo.save(appointment);
+        return true;
     }
 
     public List<Appointment> getAllAppointmentsByDoctorType(DoctorType doctorType) throws AdminSystemExceptions {
@@ -88,7 +94,7 @@ public class AdminService {
     }
 
     //creating appointment to patient
-    public void addAppointmentToPatient(int patientId, int appointmentId) throws AdminSystemExceptions {
+    public boolean addAppointmentToPatient(int patientId, int appointmentId) throws AdminSystemExceptions {
         Patient patient = userRepo.findById(patientId).orElseThrow(() -> new IllegalArgumentException("Patient not found"));
         Appointment appointment = appointmentRepo.findById(appointmentId).orElseThrow(() -> new IllegalArgumentException("Appointment not found"));
 
@@ -97,7 +103,18 @@ public class AdminService {
         userRepo.save(patient);
         appointment.setStatus(AppointmentStatus.NOT_AVAILABLE);
         appointmentRepo.save(appointment);
+        return true;
+    }
+
+    //get all doctors
+    public List<DoctorType> getAllDoctors() throws AdminSystemExceptions {
+        return Arrays.asList(DoctorType.values());
     }
 
 
 }
+
+
+
+
+

@@ -1,10 +1,7 @@
 package Queue.management.system.example.management.system.beans;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
@@ -32,11 +29,7 @@ public class Patient {
     @Column(nullable = false)
     private String password;
 
-    @ManyToMany
-    @JoinTable(
-            name = "patient_appointment",
-            joinColumns = @JoinColumn(name = "patient_id"),
-            inverseJoinColumns = @JoinColumn(name = "appointment_id")
-    )
+    @OneToMany(cascade = CascadeType.REMOVE,orphanRemoval = true)
+    @Singular
     private List<Appointment> appointments;
 }

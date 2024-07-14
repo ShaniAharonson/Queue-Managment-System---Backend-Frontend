@@ -1,11 +1,12 @@
-
-.MainLayout {
-    height: 100%;
-    box-sizing: border-box;
-    display: grid;
-    grid-template-rows: 15% 5% 75% 5%;
-}
-
-.MainLayout,.MainLayout>*{
-    border:1px solid black;
+@media (max-width: 768px) {
+    .MainLayout {
+        grid-template-rows: auto 1fr auto;
+    }
+    .Menu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .Box {
+        width: 100%;
+    }
 }

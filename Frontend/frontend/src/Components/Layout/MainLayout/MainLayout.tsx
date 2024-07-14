@@ -1,3 +1,4 @@
+import { MainRoute } from "../../route/MainRoute/MainRoute";
 import { Footer } from "../Footer/Footer";
 import { Header } from "../Header/Header";
 import { Main } from "../Main/Main";
@@ -10,11 +11,11 @@ export function MainLayout(): JSX.Element {
             <header>
                 <Header />
             </header>
-            <div style={{padding:10}}>
+            <div >
                 <Menu />
             </div>
             <main>
-                <Main />
+                <MainRoute />
             </main>
             <footer>
                 <Footer />

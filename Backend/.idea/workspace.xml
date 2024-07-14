@@ -5,29 +5,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fd5a3fe-85ad-47c2-afb3-61aa927b2f60" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Utils/JWT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/Credentials.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/UserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Controllers/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Controllers/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Controllers/PatientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Controllers/PatientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Exceptions/AdminExceptions/AdminErrMsg.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Exceptions/AdminExceptions/AdminErrMsg.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Repo/PatientRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Repo/PatientRepo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Service/PatientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/Service/PatientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/Appointment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/NotificationType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/clr/AdminClr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/clr/AdminClr.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/UserDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/beans/UserDetails.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/clr/PatientClr.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Queue/management/system/example/management/system/clr/PatientClr.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Controllers/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Controllers/AdminController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Controllers/PatientController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Controllers/PatientController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Exceptions/AdminExceptions/AdminErrMsg.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Exceptions/AdminExceptions/AdminErrMsg.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Repo/PatientRepo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Repo/PatientRepo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Service/AdminService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Service/PatientService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/Service/PatientService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Appointment$AppointmentBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Appointment$AppointmentBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Appointment.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Appointment.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/NotificationType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Patient$PatientBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Patient$PatientBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Patient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/Patient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/UserDetails$UserDetailsBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/UserDetails$UserDetailsBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/UserDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/beans/UserDetails.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/clr/AdminClr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/clr/AdminClr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/clr/PatientClr.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Queue/management/system/example/management/system/clr/PatientClr.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Header/Header.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Header/Header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Header/Header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/MainLayout/MainLayout.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/MainLayout/MainLayout.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/MainLayout/MainLayout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/MainLayout/MainLayout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Menu/Menu.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Menu/Menu.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Menu/Menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Layout/Menu/Menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Models/AppointmentStatus.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Models/DoctorType.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Models/Patient.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Models/UserDetails.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Pages/AdminPages/AddAppointment/AddAppointment.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Pages/AdminPages/AddAppointment/AddAppointment.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Pages/AdminPages/AddAppointment/AddAppointment.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/Components/Pages/AdminPages/AddAppointment/AddAppointment.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Frontend/frontend/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../Frontend/frontend/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -35,9 +70,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2j2qyU7RJQ9jPMpbWYwQlSXUxCg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />

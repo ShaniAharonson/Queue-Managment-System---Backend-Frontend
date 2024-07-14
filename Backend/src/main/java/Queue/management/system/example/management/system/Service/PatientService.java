@@ -27,15 +27,15 @@ public class PatientService {
     private final PatientRepo patientRepo;
     private final AdminService adminService;
 
-    public boolean patientLogin(String email, String password) throws AdminSystemExceptions, PatientSystemExceptions {
+    public int patientLogin(String email, String password) throws AdminSystemExceptions, PatientSystemExceptions {
         Patient patient = patientRepo.findByEmailAndPassword(email, password);
         if (patient == null) {
             throw new PatientSystemExceptions(PatientErrMsg.PATIENT_NOT_FOUND);
         }
-        return true;
+        return patient.getId();
     }
 
-    public void deleteAppointment(int patientId, int appointmentId) throws PatientSystemExceptions {
+    public boolean deleteAppointment(int patientId, int appointmentId) throws PatientSystemExceptions {
         Patient patient = patientRepo.findById(patientId).orElseThrow(() -> new PatientSystemExceptions(PatientErrMsg.PATIENT_NOT_FOUND));
         Appointment appointment = appointmentRepo.findById(appointmentId).orElseThrow(() -> new PatientSystemExceptions(PatientErrMsg.APPOINTMENT_NOT_FOUND));
 
@@ -47,14 +47,16 @@ public class PatientService {
         patient.getAppointments().remove(appointment);
         patientRepo.saveAndFlush(patient);
         appointmentRepo.saveAndFlush(appointment);
+        return true;
     }
 
-    public void updatePatient(Patient patient) throws AdminSystemExceptions {
+    public boolean updatePatient(Patient patient) throws AdminSystemExceptions {
         patientRepo.findById(patient.getId()).orElseThrow(() ->
                 new AdminSystemExceptions(AdminErrMsg.USER_NOT_FOUND));
         patientRepo.saveAndFlush(patient);
+        return true;
     }
-        public void makingAppointment ( int patientId, int appointmentId) throws
+        public boolean makingAppointment ( int patientId, int appointmentId) throws
         PatientSystemExceptions, AdminSystemExceptions {
             Patient patient = patientRepo.findById(patientId)
                     .orElseThrow(() -> new PatientSystemExceptions(PatientErrMsg.PATIENT_NOT_FOUND));
@@ -81,6 +83,7 @@ public class PatientService {
 //            appointments.remove(appointment);
 //            // Saving
 //            appointmentRepo.saveAndFlush(appointment);
+            return true;
         }
 
         public List<Appointment> getAllPatientAppointments (int id) throws PatientSystemExceptions {
@@ -96,4 +99,9 @@ public class PatientService {
                     .collect(Collectors.toList());
         }
 
+
+    public Patient getSinglePatient(int patientId) throws PatientSystemExceptions {
+        return patientRepo.findById(patientId).orElseThrow(
+                ()->new PatientSystemExceptions(PatientErrMsg.PATIENT_NOT_FOUND));
     }
+}

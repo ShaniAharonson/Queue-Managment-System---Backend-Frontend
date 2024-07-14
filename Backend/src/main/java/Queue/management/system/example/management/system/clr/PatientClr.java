@@ -21,6 +21,8 @@ public class PatientClr implements CommandLineRunner {
 
 //            System.out.println(patientService.getAllPatientAppointments(2));
 //            patientService.makingAppointment(2,5);
+            patientService.makingAppointment(1,1);
+            patientService.makingAppointment(4,2);
             //System.out.println("appointment is added!");
 
         } catch (Exception err){

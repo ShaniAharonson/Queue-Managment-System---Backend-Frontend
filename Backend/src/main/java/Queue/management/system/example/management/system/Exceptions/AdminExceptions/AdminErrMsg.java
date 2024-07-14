@@ -11,7 +11,8 @@ public enum AdminErrMsg {
     ID_NOT_FOUND("ID not found"),
     APPOINTMENT_NOT_FOUND("Appointment not found"),
     APPOINTMENT_ALREADY_EXISTS("Appointment already exists"),
-    PATIENT_ALREADY_EXISTS("Patient already exists");
+    PATIENT_ALREADY_EXISTS("Patient already exists"),
+    ADNIN_ERROR("Admin not found!");
 
     private final String message;
 
