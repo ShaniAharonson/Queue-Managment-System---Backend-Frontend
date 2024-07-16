@@ -66,7 +66,7 @@ public class AdminClr implements CommandLineRunner {
             adminService.createAppointment(Appointment.builder()
                     .id(0)
                     .appointmentDate(Timestamp.valueOf(LocalDateTime.of(2024,9,12,10,30)))
-                    .status(AppointmentStatus.CONFIRMED)
+                    .appointmentStatus(AppointmentStatus.CONFIRMED)
                     .doctorType(DoctorType.DERMATOLOGIST)
                     .build());
             // adminService.getAllPatients().forEach(System.out::println);

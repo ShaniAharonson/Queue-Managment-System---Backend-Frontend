@@ -22,8 +22,8 @@ export class AdminState {
         appointment: Appointment = new Appointment(
             0, // id
             new Date(), // appointmentDate
-            AppointmentStatus.Pending, // appointmentStatus (הגדרה ראשונית)
-            DoctorType.General // doctorType (הגדרה ראשונית)
+            AppointmentStatus.AVAILABLE, // appointmentStatus (הגדרה ראשונית)
+            DoctorType.DERMATOLOGIST // doctorType (הגדרה ראשונית)
         );
     }
 

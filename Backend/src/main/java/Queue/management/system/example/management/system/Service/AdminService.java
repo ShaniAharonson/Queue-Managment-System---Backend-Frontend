@@ -101,7 +101,7 @@ public class AdminService {
         // Add the appointment to the patient's appointments
         patient.getAppointments().add(appointment);
         userRepo.save(patient);
-        appointment.setStatus(AppointmentStatus.NOT_AVAILABLE);
+        appointment.setAppointmentStatus(AppointmentStatus.NOT_AVAILABLE);
         appointmentRepo.save(appointment);
         return true;
     }

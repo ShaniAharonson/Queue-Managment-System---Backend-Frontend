@@ -4,6 +4,8 @@
     padding: 20px;
     text-align: center;
     border-bottom: 2px solid #495057;
+    display: grid;
+    grid-template-columns: 10% 75% 15%;
 }
 .HeaderTitle {
     font-size: 2.5rem;
@@ -13,4 +15,18 @@
     font-size: 1.25rem;
     margin: 10px 0 0;
     color: #adb5bd;
+}
+
+.login p {
+    margin: 0;
+}
+
+.ButtonGroup {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.ButtonGroup .MuiButtonBase-root {
+    min-width: 100px;
 }

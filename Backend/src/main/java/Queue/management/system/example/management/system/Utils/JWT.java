@@ -41,9 +41,7 @@ public class JWT {
     public String generateToken(String token) {
         Map<String, Object> claims = new HashMap<>();
         Claims ourClaims = extractAllClaims(token);
-        claims.put("userName", ourClaims.get("userName"));
         claims.put("userType", ourClaims.get("userType"));
-        claims.put("id",ourClaims.get("id"));
         return createToken(claims, ourClaims.getSubject());
     }
 
@@ -116,16 +114,12 @@ public class JWT {
     }
 
     public HttpHeaders CheckTheJWT(String jwt) throws Exception{
-        //take out only the jwt without Bearer
+        HttpHeaders headers = new HttpHeaders();
         String myJWT = jwt.split(" ")[1];
         if (validateToken(myJWT)){
-            HttpHeaders headers = new HttpHeaders();
             headers.set("Authorization","Bearer "+generateToken(myJWT));
-//            headers.set("CompanyID","5");
-//            headers.set("UserID","3");
-            return headers;
         }
-        throw new Exception("Invalid token");
+        return headers;
         //return new ResponseEntity<>(service.getAllSongs(),getHeaders(jwt),HttpStatus.OK);
 
     }

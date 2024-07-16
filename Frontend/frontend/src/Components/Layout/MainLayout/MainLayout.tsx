@@ -11,7 +11,7 @@ export function MainLayout(): JSX.Element {
             <header>
                 <Header />
             </header>
-            <div >
+            <div className="MenuContainer">
                 <Menu />
             </div>
             <main>

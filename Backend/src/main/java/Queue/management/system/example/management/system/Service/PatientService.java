@@ -76,7 +76,7 @@ public class PatientService {
             // Saving
             patientRepo.saveAndFlush(patient);
             // Getting all appointments
-            appointment.setStatus(AppointmentStatus.NOT_AVAILABLE);
+            appointment.setAppointmentStatus(AppointmentStatus.NOT_AVAILABLE);
             appointmentRepo.saveAndFlush(appointment);
 //            List<Appointment> appointments = adminService.getAllAppointments();
 //            // Removing this specific appointment

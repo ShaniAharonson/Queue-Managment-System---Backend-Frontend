@@ -12,6 +12,8 @@ import { DeletePatient } from "../../Pages/AdminPages/DeletePatient/DeletePatien
 import { SingleAppointment } from "../../Pages/AdminPages/SingleAppointment/SingleAppointment";
 import { SinglePatient } from "../../Pages/AdminPages/SinglePatient/SinglePatient";
 import { UpdateAppointment } from "../../Pages/AdminPages/updateAppointment/updateAppointment";
+import { Login } from "../../Pages/General/Login/Login";
+import { Register } from "../../Pages/General/Register/Register";
 
 export function MainRoute(): JSX.Element {
     return (
@@ -26,12 +28,12 @@ export function MainRoute(): JSX.Element {
                 <Route path="/all/appointments/by/doctor" element={<AllAppointmentsByDoctor/>}/>
                 <Route path="/delete/appointment/:id" element={<DeleteAppointment/>}/>
                 <Route path="/delete/patient/:id" element={<DeletePatient/>}/>
-                <Route path="/single/appointment/:id" element={<SingleAppointment/>}/>
                 <Route path="/single/patient/:id" element={<SinglePatient/>}/>
                 <Route path="/update/appointment/:id" element={<UpdateAppointment/>}/>
 
 
-
+                <Route path="/login" element={<Login/>}/>
+                <Route path="/register" element={<Register/>}/>
                 <Route path="*" element={<Page404/>}/>
 
 

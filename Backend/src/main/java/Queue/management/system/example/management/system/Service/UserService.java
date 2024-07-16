@@ -44,7 +44,7 @@ public class UserService {
                         .userId(patientId)
                         .build();
             case ADMIN:
-                if (!credentials.getEmail().equals("admin@admin.com") && !credentials.getPassword().equals("admin")) {
+                if (!credentials.getEmail().equals("admin@medical.com") && !credentials.getPassword().equals("admin")) {
                     throw new AdminSystemExceptions(AdminErrMsg.ADNIN_ERROR);
                 }
                 return UserDetails.builder()

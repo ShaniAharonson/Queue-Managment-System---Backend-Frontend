@@ -35,7 +35,7 @@ public class Appointment {
 
     @Enumerated(EnumType.STRING)
     @Column( name = "status")
-    private AppointmentStatus status;
+    private AppointmentStatus appointmentStatus;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "doctor_type")

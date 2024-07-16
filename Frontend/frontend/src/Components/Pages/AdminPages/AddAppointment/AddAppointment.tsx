@@ -16,17 +16,17 @@ export function AddAppointment(): JSX.Element {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<Appointment>();
 
-    // useEffect(() => {
-    //     checkData();
-    //     if (store.getState().auth.token.length < 10) {
-    //         navigate("/login");
-    //     }
-    // }, [navigate]);
+    useEffect(() => {
+        checkData();
+        if (store.getState().auth.token.length < 10) {
+            navigate("/login");
+        }
+    }, [navigate]);
 
     const onSubmit: SubmitHandler<Appointment> = (data) => {
         console.log(data);
         data.id = 0;
-        axiosJWT.post(`http://localhost:8080/api/admin/add_patient`, data)
+        axiosJWT.post(`http://localhost:8080/api/admin/create_new_appointment`, data)
             .then((res) => {
                 data.id = res.data;
                 store.dispatch(addAppointmentAction(data));
@@ -60,6 +60,7 @@ export function AddAppointment(): JSX.Element {
                             <TextField
                                 select
                                 label="Appointment Status"
+                                defaultValue={AppointmentStatus.AVAILABLE}
                                 fullWidth
                                 {...register("appointmentStatus", { required: "This field is required!" })}
                                 error={Boolean(errors.appointmentStatus)}
@@ -77,6 +78,7 @@ export function AddAppointment(): JSX.Element {
                             <TextField
                                 select
                                 label="Doctor Type"
+                                defaultValue={DoctorType.FAMILY_MEDICINE}
                                 fullWidth
                                 {...register("doctorType", { required: "This field is required!" })}
                                 error={Boolean(errors.doctorType)}
