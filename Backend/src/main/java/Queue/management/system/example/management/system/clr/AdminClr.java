@@ -63,12 +63,12 @@ public class AdminClr implements CommandLineRunner {
 
 //            System.out.println("single patient: " + adminService.getSinglePatient(1));
 
-            adminService.createAppointment(Appointment.builder()
-                    .id(0)
-                    .appointmentDate(Timestamp.valueOf(LocalDateTime.of(2024,9,12,10,30)))
-                    .appointmentStatus(AppointmentStatus.CONFIRMED)
-                    .doctorType(DoctorType.DERMATOLOGIST)
-                    .build());
+//            adminService.createAppointment(Appointment.builder()
+//                    .id(0)
+//                    .appointmentDate(Timestamp.valueOf(LocalDateTime.of(2024,9,12,10,30)))
+//                    .appointmentStatus(AppointmentStatus.CONFIRMED)
+//                    .doctorType(DoctorType.DERMATOLOGIST)
+//                    .build());
             // adminService.getAllPatients().forEach(System.out::println);
 //            System.out.println("All appointments:");
 //            adminService.getAllAppointments().forEach(System.out::println);
@@ -80,7 +80,8 @@ public class AdminClr implements CommandLineRunner {
 //                    .doctorType(DoctorType.DERMATOLOGIST)
 //                    .status(AppointmentStatus.SCHEDULED)
 //                    .build());
-
+//adminService.deleteAppointment(1);
+            adminService.deleteAppointment(2);
 //            System.out.println("By doc. type");
 //            System.out.println(adminService.getAllAppointmentsByDoctorType(DoctorType.DERMATOLOGIST));
         } catch (Exception err) {

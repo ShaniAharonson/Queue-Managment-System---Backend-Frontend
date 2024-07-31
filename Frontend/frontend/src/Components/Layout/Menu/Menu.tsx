@@ -15,13 +15,8 @@ export function Menu(): JSX.Element {
             <NavLink to="/all/patients">All Patients</NavLink>
             |
             <NavLink to="/all/appointments/by/doctor">All Appointments By Doctor Type</NavLink>
-            |
-            <NavLink to="/delete/appointment/:id">Delete Appointment</NavLink>
-            |
-            <NavLink to="/delete/patient/:id">Delete Patient</NavLink>
-            |
-            <NavLink to="/single/appointment/:id">Single Appointment</NavLink>
             
+                        
         </div>
     );
 }

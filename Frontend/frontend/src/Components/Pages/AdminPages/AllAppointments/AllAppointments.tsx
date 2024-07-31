@@ -21,22 +21,22 @@ export function AllAppointments(): JSX.Element {
         const userType = store.getState().auth.userType;
         if (userType !== UserType.ADMIN) {
             notify.error("You are not allowed");
-            navigate("/");
+            navigate("/login");
             return;
         }
 
-        // Fetch appointments if not already in store
         if (store.getState().admin.appointments.length <=1) {
+            // if store is empty
             axiosJWT.get("http://localhost:8080/api/admin/all_appointments")
                 .then(res => {
-                    console.log("data:", res);  // Debugging line
+                    //console.log("data:", res);  // Debugging line
                     const recievedList: Appointment[] = res.data.map((data: any) => new Appointment(
                         data.id,
                         data.appointmentDate,
                         data.appointmentStatus,
                         data.doctorType
                     ));
-                    // Update Redux store and local state
+                    // Update Redux store
                     store.dispatch(allAppointmentsAction(recievedList));
                     setAppointments(store.getState().admin.appointments);
                 })
@@ -51,7 +51,7 @@ export function AllAppointments(): JSX.Element {
     }, [navigate]);
 
     return (
-        <div className="AllAppointments">
+        <div className="AllAppointments" >
             {appointments.map(item => <SingleAppointment key={item.id} appointemnt={item} />)}
         </div>
     );

@@ -15,7 +15,7 @@ import notify from "../../../../util/notify";
 export function AddAppointment(): JSX.Element {
     const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm<Appointment>();
-
+        
     useEffect(() => {
         checkData();
         if (store.getState().auth.token.length < 10) {
@@ -32,7 +32,11 @@ export function AddAppointment(): JSX.Element {
                 store.dispatch(addAppointmentAction(data));
                 notify.success("Appointment added successfully");
                 navigate("/");
-            });
+            })
+            .catch(err=>{
+                notify.error("Cannot add new appointment");
+                navigate("/login");
+            })
     }
 
     return (
@@ -47,7 +51,7 @@ export function AddAppointment(): JSX.Element {
                         <Grid item xs={12}>
                             <TextField
                                 label="Appointment Date"
-                                type="date"
+                                type="datetime-local"
                                 fullWidth
                                 {...register("appointmentDate", { required: "This field is required!" })}
                                 InputLabelProps={{ shrink: true }}

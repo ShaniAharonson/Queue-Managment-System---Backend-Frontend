@@ -4,6 +4,7 @@ import { Button, ButtonGroup } from "@mui/material";
 import { store } from "../../../redux/Store";
 import { logoutAction } from "../../../redux/authReducer";
 import { useNavigate } from "react-router-dom";
+import logo from "../../../assets/stock-vector-stethoscope-logo-healthcare-and-medical-design-vector-illustration-2199496885.jpg";
 export function Header(): JSX.Element {
     const [isLogged, setLogged] = useState(false);
     const [userName, setName] = useState("");
@@ -12,12 +13,13 @@ export function Header(): JSX.Element {
         setName(store.getState().auth.name);
         setLogged(store.getState().auth.isLogged);
     })
+    
     const navigate = useNavigate();
     
     return (
         <div className="Header">
             <div>
-                logo
+                <img src={logo} width={110}/>
             </div>
             <div>
             <h1 className="HeaderTitle">Queue Management System</h1>
@@ -31,7 +33,7 @@ export function Header(): JSX.Element {
                             if (isLogged) {
                                 sessionStorage.removeItem("jwt");               
                                 store.dispatch(logoutAction());
-                                navigate("/login");
+                                navigate("/");
                             } else {                                                 
                                 navigate("/login");
                             }

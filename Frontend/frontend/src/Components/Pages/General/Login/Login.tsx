@@ -56,7 +56,7 @@ export function Login(): JSX.Element {
             store.dispatch(loginAction(myAuth))
             
             notify.success("Welcome back");
-            navigate("/add/appointment");
+            navigate("/");
         })
         .catch(err=>{
             console.log(err);
@@ -70,7 +70,7 @@ export function Login(): JSX.Element {
                 <Typography variant="h4" className="HeadLine">User Login</Typography><hr />
                 <TextField label="user email" variant="outlined" {...register("userEmail")}/><br /><br />
                 <TextField label="user password" variant="outlined" type="password" {...register("userPass")}/><br /><br/>
-                <Select  fullWidth {...register("userType")} defaultValue="patient">
+                <Select fullWidth {...register("userType")} defaultValue="patient">
                     <MenuItem value="patient">Patient</MenuItem>
                     <MenuItem value="Admin">Admin</MenuItem>
                 </Select>

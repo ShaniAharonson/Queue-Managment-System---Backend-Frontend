@@ -26,9 +26,8 @@ export function MainRoute(): JSX.Element {
                 <Route path="/add/patient" element={<AddPatient/>}/>
                 <Route path="/all/patients" element={<AllPatients/>}/>
                 <Route path="/all/appointments/by/doctor" element={<AllAppointmentsByDoctor/>}/>
-                <Route path="/delete/appointment/:id" element={<DeleteAppointment/>}/>
+                <Route path="/delete_appointment/:id" element={<DeleteAppointment/>}/>
                 <Route path="/delete/patient/:id" element={<DeletePatient/>}/>
-                <Route path="/single/patient/:id" element={<SinglePatient/>}/>
                 <Route path="/update/appointment/:id" element={<UpdateAppointment/>}/>
 
 

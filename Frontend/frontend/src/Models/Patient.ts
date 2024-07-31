@@ -7,15 +7,13 @@ export class Patient {
     public email: string;
     public phone: string;
     public password: string;
-    public appointments: Appointment[];
 
-    constructor(id: number, firstName: string, lastName: string, email: string, phone: string, password: string, appointments: Appointment[]) {
+    constructor(id: number, firstName: string, lastName: string, email: string, phone: string, password: string) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
         this.password = password;
-        this.appointments = appointments;
     }
 }

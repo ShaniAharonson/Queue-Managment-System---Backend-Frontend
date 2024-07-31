@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -51,7 +52,6 @@ public class AdminService {
             throw new AdminSystemExceptions(AdminErrMsg.ID_NOT_FOUND);
         }
         appointmentRepo.deleteById(id);
-        // todo: fix- not working!!!!!!!
         return true;
     }
 
@@ -73,12 +73,17 @@ public class AdminService {
         return appointmentRepo.findAll();
     }
 
-    public boolean updateAppointment(Appointment appointment) throws AdminSystemExceptions {
-        if (!appointmentRepo.existsById(appointment.getId())) {
+    public Appointment updateAppointment(Appointment appointment) throws AdminSystemExceptions {
+        Optional<Appointment> existingAppointmentOpt = appointmentRepo.findById(appointment.getId());
+        if (!existingAppointmentOpt.isPresent()) {
             throw new AdminSystemExceptions(AdminErrMsg.APPOINTMENT_NOT_FOUND);
         }
-        appointmentRepo.saveAndFlush(appointment);
-        return true;
+        Appointment existingAppointment = existingAppointmentOpt.get();
+        existingAppointment.setAppointmentDate(appointment.getAppointmentDate());
+        existingAppointment.setAppointmentStatus(appointment.getAppointmentStatus());
+        existingAppointment.setDoctorType(appointment.getDoctorType());
+
+        return appointmentRepo.saveAndFlush(existingAppointment);
     }
 
     public boolean createAppointment(Appointment appointment) throws AdminSystemExceptions {
