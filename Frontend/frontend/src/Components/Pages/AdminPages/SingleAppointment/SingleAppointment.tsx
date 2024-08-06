@@ -34,6 +34,11 @@ export function SingleAppointment(props: appointmentProps): JSX.Element {
                     navigate(`/api/admin/delete_appointment/${props.appointemnt.id}`)
                 }}>
                     <Button variant="contained" color="error" >Delete Appointment</Button>
+                </div> <br />
+                <div className="addToPatient" onClick={()=>{
+                    navigate(`/add/appointment/to/patient/${props.appointemnt.id}`);
+                }}>
+                    <Button variant="contained" color="success">Add Appointment to Patient</Button>
                 </div>
             </div>
         </div>

@@ -9,7 +9,8 @@ interface patientProps{
 export function SinglePatient(props:patientProps): JSX.Element {
     return (
         <div className="SinglePatient Box">
-			<Typography variant="h5">{props.patient.firstName} {props.patient.lastName}</Typography>
+			<Typography variant="h5"> {props.patient.firstName} {props.patient.lastName}</Typography>
+            <p><b>ID:</b> {props.patient.id}</p>
             <p><b>Email:</b> {props.patient.email}</p>
             <p><b>Phone:</b> {props.patient.phone}</p>
 

@@ -22,7 +22,7 @@ export function MainRoute(): JSX.Element {
                 {/* admin routes */}
                 <Route path="/" element={<AllAppointments/>}/>
                 <Route path="/add/appointment" element={<AddAppointment/>}/>
-                <Route path="/add/appointment/to/patient" element={<AddAppointmentToPatient/>}/>
+                <Route path="/add/appointment/to/patient/:id" element={<AddAppointmentToPatient/>}/>
                 <Route path="/add/patient" element={<AddPatient/>}/>
                 <Route path="/all/patients" element={<AllPatients/>}/>
                 <Route path="/all/appointments/by/doctor" element={<AllAppointmentsByDoctor/>}/>
